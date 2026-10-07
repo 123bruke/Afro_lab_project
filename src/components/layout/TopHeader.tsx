@@ -88,7 +88,7 @@ export const TopHeader: React.FC = () => {
             : 'border-zinc-800/80 bg-zinc-950/90 text-zinc-100'
         }`}
       >
-        {/* Zone 1: Brand Wordmark & Mobile Drawer Button */}
+        {/* Zone 1: Mobile Drawer Button */}
         <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
           <button
             type="button"
@@ -102,20 +102,6 @@ export const TopHeader: React.FC = () => {
             }`}
           >
             <Ellipsis className="w-5 h-5 icon-premium" />
-          </button>
-          <button
-            type="button"
-            onClick={() => setTab('home')}
-            className={`text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 whitespace-nowrap cursor-pointer flex items-center gap-2 group ${
-              isLight
-                ? 'text-zinc-950 hover:text-sky-600'
-                : 'text-zinc-100 hover:text-sky-400'
-            }`}
-          >
-            <span className="icon-tile icon-tile-active transition-transform duration-300 group-hover:scale-110" aria-hidden="true">
-              <Sparkles className="w-3.5 h-3.5" />
-            </span>
-            <span className="font-bold">ContextFlow</span>
           </button>
         </div>
 
