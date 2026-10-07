@@ -1,0 +1,6 @@
+{
+  "name": "ContextFlow",
+  "description": "AI Context Manager for Long-Horizon Tasks — developer observability and context continuity across sessions, memories, documents, and agents.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

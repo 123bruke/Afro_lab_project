@@ -1,0 +1,670 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #09090b;
+    color: #f4f4f5;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  html.light body {
+    background-color: #fafafa;
+    color: #09090b;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Light theme surface & typography mapping - strictly excludes hero-cover so hero text on AI agent image stays brilliant white */
+html.light body {
+  background-color: #fafafa;
+  color: #09090b;
+}
+
+html.light :not(.hero-cover):not(.hero-cover *) > .bg-zinc-950,
+html.light .bg-zinc-950:not(.hero-cover):not(.hero-cover *),
+html.light .bg-slate-950:not(.hero-cover):not(.hero-cover *) {
+  background-color: #fafafa;
+}
+
+html.light .bg-zinc-900:not(.hero-cover):not(.hero-cover *),
+html.light .bg-zinc-900\/90:not(.hero-cover):not(.hero-cover *),
+html.light .bg-zinc-900\/80:not(.hero-cover):not(.hero-cover *),
+html.light .bg-zinc-900\/70:not(.hero-cover):not(.hero-cover *),
+html.light .bg-zinc-900\/50:not(.hero-cover):not(.hero-cover *),
+html.light .bg-zinc-900\/40:not(.hero-cover):not(.hero-cover *),
+html.light .bg-zinc-900\/30:not(.hero-cover):not(.hero-cover *),
+html.light .bg-zinc-900\/25:not(.hero-cover):not(.hero-cover *) {
+  background-color: #f4f4f5;
+}
+
+html.light .bg-zinc-800:not(.hero-cover):not(.hero-cover *) {
+  background-color: #e4e4e7;
+}
+
+html.light .border-zinc-800:not(.hero-cover):not(.hero-cover *),
+html.light .border-zinc-800\/80:not(.hero-cover):not(.hero-cover *) {
+  border-color: #e4e4e7;
+}
+
+html.light .border-zinc-700:not(.hero-cover):not(.hero-cover *) {
+  border-color: #d4d4d8;
+}
+
+html.light .text-zinc-100:not(.hero-cover):not(.hero-cover *),
+html.light .text-white:not(.hero-cover):not(.hero-cover *) {
+  color: #09090b;
+}
+
+html.light .text-zinc-200:not(.hero-cover):not(.hero-cover *) {
+  color: #18181b;
+}
+
+html.light .text-zinc-300:not(.hero-cover):not(.hero-cover *) {
+  color: #27272a;
+}
+
+html.light .text-zinc-400:not(.hero-cover):not(.hero-cover *) {
+  color: #52525b;
+}
+
+html.light .text-zinc-500:not(.hero-cover):not(.hero-cover *) {
+  color: #71717a;
+}
+
+/* Hero Cover Theme Mapping: Dark mode uses dark scrim and white text; Light mode uses white gradient and crisp dark text */
+.hero-cover {
+  position: relative;
+  color: #ffffff;
+}
+
+.hero-cover h1,
+.hero-cover .hero-headline {
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+}
+
+.hero-cover p,
+.hero-cover .hero-subheadline {
+  color: #e4e4e7;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.75);
+}
+
+.hero-cover .hero-tag {
+  background-color: rgba(24, 24, 27, 0.85);
+  border-color: rgba(63, 63, 70, 0.8);
+  color: #38bdf8;
+}
+
+/* Light mode overrides for Hero Cover: crisp dark text over white gradient */
+html.light .hero-cover {
+  color: #09090b !important;
+}
+
+html.light .hero-cover h1,
+html.light .hero-cover .hero-headline {
+  color: #09090b !important;
+  text-shadow: none !important;
+}
+
+html.light .hero-cover p,
+html.light .hero-cover .hero-subheadline {
+  color: #27272a !important;
+  text-shadow: none !important;
+}
+
+html.light .hero-cover .hero-tag {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(212, 212, 216, 0.9) !important;
+  color: #0284c7 !important;
+}
+
+/* In Light Mode: Every clickable button must be black color */
+html.light button:not(.theme-toggle-btn) {
+  background-color: #09090b !important;
+  color: #ffffff !important;
+  border-color: #27272a !important;
+}
+
+html.light button:not(.theme-toggle-btn) * {
+  color: #ffffff !important;
+}
+
+html.light button:not(.theme-toggle-btn):hover {
+  background-color: #18181b !important;
+  color: #ffffff !important;
+}
+
+.hero-cover .hero-terminal-card {
+  background-color: rgba(9, 9, 11, 0.95) !important;
+  border-color: #27272a !important;
+}
+
+html.light .text-sky-400,
+html.light .text-sky-300 {
+  color: #0284c7 !important;
+}
+
+html.light .text-emerald-400 {
+  color: #059669 !important;
+}
+
+html.light .text-amber-400 {
+  color: #d97706 !important;
+}
+
+html.light .text-rose-400 {
+  color: #e11d48 !important;
+}
+
+/* Subtle developer scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 2px;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Continuous horizontal movement marquee animations */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 32s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 32s linear infinite;
+}
+
+.animate-marquee-versions {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 38s linear infinite;
+}
+
+.pause-on-hover:hover {
+  animation-play-state: paused;
+}
+
+/* Slow graceful breathing zoom animation for hero AI agent image */
+@keyframes slow-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 24s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* Continuous reflective shimmer / sheen for transparent glass cards and buttons */
+@keyframes reflective-sweep {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+  }
+  40% {
+    transform: translateX(200%) skewX(-25deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-25deg);
+  }
+}
+
+.reflective-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.reflective-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 100%
+  );
+  animation: reflective-sweep 7s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Reflection sweep tuned for full-bleed cover images (glass sheen) */
+.reflective-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.16) 46%,
+    rgba(214, 240, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.16) 54%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  animation: reflective-image-sweep 9s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 11;
+}
+
+@keyframes reflective-image-sweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  55% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+/* Transparent, softly fading image edges so the artwork melts into the page */
+.fade-edge-mask {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 7%,
+    #000 82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 7%,
+    #000 82%,
+    transparent 100%
+  );
+}
+
+/* Slowly flowing transparent animated gradient overlay */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-flow {
+  background-size: 240% 240%;
+  animation: gradient-flow 16s ease infinite;
+}
+
+.hero-animated-gradient {
+  background: linear-gradient(
+    120deg,
+    rgba(56, 189, 248, 0.4),
+    rgba(129, 140, 248, 0.26),
+    rgba(52, 211, 153, 0.3),
+    rgba(56, 189, 248, 0.4)
+  );
+  background-size: 240% 240%;
+  animation: gradient-flow 18s ease infinite;
+  mix-blend-mode: screen;
+}
+
+html.light .hero-animated-gradient {
+  background: linear-gradient(
+    120deg,
+    rgba(56, 189, 248, 0.28),
+    rgba(129, 140, 248, 0.18),
+    rgba(52, 211, 153, 0.22),
+    rgba(56, 189, 248, 0.28)
+  );
+  background-size: 240% 240%;
+  animation: gradient-flow 18s ease infinite;
+  mix-blend-mode: multiply;
+}
+
+/* Animated gradient headline text (company name / brand) */
+.animated-gradient-text {
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #34d399, #38bdf8);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-flow 9s linear infinite;
+}
+
+/* Glass + fully transparent gradient headline (hero brand title) */
+.glass-title {
+  background: linear-gradient(90deg, #38bdf8, #a5b4fc, #6ee7b7, #38bdf8);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  text-shadow: none !important;
+  animation: gradient-flow 7s linear infinite;
+}
+
+.hero-cover h1.glass-title {
+  color: transparent !important;
+  text-shadow: none !important;
+}
+
+html.light .hero-cover h1.glass-title {
+  background: linear-gradient(90deg, #0284c7, #4f46e5, #059669, #0284c7);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  text-shadow: none !important;
+}
+
+/* Ecosystem brand cards (real logos + company name) */
+.brand-card {
+  --brand: #38bdf8;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.8rem 1.1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+html.light .brand-card {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(228, 228, 231, 0.95);
+}
+
+.brand-card:hover {
+  transform: translateY(-3px) scale(1.04);
+  border-color: color-mix(in srgb, var(--brand) 45%, transparent);
+  box-shadow:
+    0 12px 26px -14px rgba(0, 0, 0, 0.45),
+    0 2px 8px -4px rgba(0, 0, 0, 0.2);
+}
+
+html.light .brand-card:hover {
+  box-shadow:
+    0 14px 28px -16px rgba(9, 9, 11, 0.22),
+    0 2px 8px -4px rgba(9, 9, 11, 0.12);
+}
+
+.brand-logo {
+  display: inline-flex;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.35s ease;
+}
+
+.brand-logo svg {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.brand-card:hover .brand-logo {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.brand-name {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  opacity: 0.72;
+  transition: opacity 0.3s ease;
+}
+
+.brand-card:hover .brand-name {
+  opacity: 1;
+}
+
+/* Small light that appears on every click, then switches itself off */
+@keyframes click-flash {
+  0% {
+    transform: translate(-50%, -50%) scale(0.45);
+    opacity: 0.95;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.6);
+    opacity: 0;
+  }
+}
+
+.click-flash {
+  animation: click-flash 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Soft light that travels with the cursor */
+.cursor-glow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 15rem;
+  height: 15rem;
+  margin: -7.5rem 0 0 -7.5rem;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 96;
+  mix-blend-mode: screen;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.22),
+    rgba(129, 140, 248, 0.1) 45%,
+    transparent 68%
+  );
+  transition: opacity 0.35s ease;
+}
+
+html.light .cursor-glow {
+  mix-blend-mode: multiply;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.16),
+    rgba(129, 140, 248, 0.07) 45%,
+    transparent 68%
+  );
+}
+
+@media (pointer: coarse) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
+/* Reduced gradient weight in light mode (light mode was too gradient-heavy) */
+html.light .hero-animated-gradient {
+  opacity: 0.14;
+}
+
+html.light .reflective-image::after {
+  opacity: 0.45;
+}
+
+
+/* Premium icon language ------------------------------------------------- */
+[class*='lucide-'] {
+  opacity: 0.78;
+  transition: opacity 0.25s ease, transform 0.3s ease, filter 0.3s ease;
+}
+
+[class*='lucide-']:hover {
+  opacity: 1;
+}
+
+.icon-premium {
+  opacity: 0.72;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.28));
+}
+
+.group:hover .icon-premium,
+.icon-premium:hover {
+  opacity: 1;
+}
+
+.icon-premium:hover {
+  transform: scale(1.14) rotate(-4deg);
+}
+
+/* Gradient tile that frames an icon like a premium control */
+.icon-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  flex-shrink: 0;
+  border-radius: 0.55rem;
+  background: linear-gradient(
+    135deg,
+    rgba(56, 189, 248, 0.16),
+    rgba(129, 140, 248, 0.14),
+    rgba(52, 211, 153, 0.12)
+  );
+  background-size: 200% 200%;
+  animation: gradient-flow 10s ease infinite;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.icon-tile .lucide {
+  opacity: 0.85;
+}
+
+.group:hover .icon-tile,
+.icon-tile:hover {
+  transform: translateY(-1px) scale(1.07);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 8px 18px -10px rgba(56, 189, 248, 0.75);
+}
+
+.group:hover .icon-tile .lucide,
+.icon-tile:hover .lucide {
+  opacity: 1;
+}
+
+.icon-tile-active {
+  background: linear-gradient(
+    135deg,
+    rgba(56, 189, 248, 0.38),
+    rgba(129, 140, 248, 0.32),
+    rgba(45, 212, 191, 0.26)
+  );
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 0 16px -6px rgba(56, 189, 248, 0.7);
+}
+
+/* Slide-in for collapsible workspace panels */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Transparent glass panel used for the end-of-page footer */
+.glass-footer {
+  background: rgba(9, 9, 11, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+html.light .glass-footer {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(228, 228, 231, 0.9);
+}
+
+.glass-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #38bdf8,
+    #818cf8,
+    #34d399,
+    #38bdf8
+  );
+  background-size: 300% 100%;
+  animation: gradient-flow 8s linear infinite;
+  border-radius: inherit;
+}
+
