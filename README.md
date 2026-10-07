@@ -12,7 +12,11 @@ A modern developer-product website and AI workspace client built with **React 19
 
 ## Table of Contents
 
-- [What is this project?](#what-is-this-project)
+- [What is this project?](#what-is-this-project)<img width="1917" height="897" alt="Screenshot 2026-10-07 164023" src="https://github.com/user-attachments/assets/98535a3a-a545-4c67-9dff-6c2facae1b6d" />
+<img width="1917" height="906" alt="Screenshot 2026-10-07 164112" src="https://github.com/user-attachments/assets/fcc90fe3-b59e-4e12-bd33-488a4515f0ea" />
+<img width="1917" height="906" alt="Screenshot 2026-10-07 164150" src="https://github.com/user-attachments/assets/2d962570-497f-4238-8f65-38830b826a46" />
+<img width="1907" height="882" alt="Screenshot 2026-10-07 164232" src="https://github.com/user-attachments/assets/883895d5-896e-41ca-a0f3-3ef1707fcde7" />
+
 - [Main features](#main-features)
 - [Tech stack](#tech-stack)
 - [Requirements](#requirements)
