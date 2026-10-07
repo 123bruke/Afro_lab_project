@@ -78,7 +78,7 @@ export const HomeView: React.FC = () => {
          ===================================================================== */}
       <section
         id="hero-cover"
-        aria-label="ContextFlow Scenic Forest Hero"
+        aria-label="Scenic Forest Hero"
         className={`hero-cover relative w-full min-h-[calc(100vh-3.5rem)] flex flex-col justify-center overflow-hidden border-b transition-colors duration-200 ${
           isLight ? 'border-zinc-200 bg-white' : 'border-zinc-800 bg-zinc-950'
         }`}
@@ -522,7 +522,7 @@ export const HomeView: React.FC = () => {
 
       {/* =====================================================================
           PAGE 8 (EIGHTH VIEW): END OF PAGE MODERN ARCHITECTURAL HOUSE IMAGE
-          WITH THE CONTEXTFLOW FOOTER TEXTS OVERLAID AT THE END OF THE PAGE
+          WITH THE FOOTER TEXTS OVERLAID AT THE END OF THE PAGE
          ===================================================================== */}
       <section
         aria-label="Ambient Architectural Environment Panorama"
@@ -561,7 +561,7 @@ export const HomeView: React.FC = () => {
           }`}
         />
 
-        {/* End-of-Page Footer Texts (ContextFlow) */}
+        {/* End-of-Page Footer Texts */}
         <div className="absolute inset-x-0 bottom-0 z-20 px-4 sm:px-6 pb-5 sm:pb-7">
           <div className="max-w-7xl mx-auto glass-footer relative overflow-hidden rounded-2xl p-5 sm:p-7 shadow-2xl">
             <div className={`grid grid-cols-1 md:grid-cols-12 gap-6 pb-5 border-b ${
@@ -569,13 +569,8 @@ export const HomeView: React.FC = () => {
             }`}>
               <div className="md:col-span-6 space-y-2">
                 <div className="text-lg font-extrabold tracking-tight animated-gradient-text">
-                  ContextFlow
+                  Afro Lab
                 </div>
-                <span className="inline-flex items-center px-3 py-1.5 rounded-xl border backdrop-blur-md bg-white/10 border-white/20 shadow-[0_0_30px_-14px_rgba(56,189,248,0.9)]">
-                  <span className="animated-gradient-text text-sm sm:text-base font-extrabold tracking-tight">
-                    Moseb_Ai
-                  </span>
-                </span>
               </div>
 
               <div className="md:col-span-3 space-y-2 text-xs">
@@ -604,7 +599,7 @@ export const HomeView: React.FC = () => {
             <div className={`pt-4 flex flex-wrap items-center justify-between gap-3 text-xs ${
               isLight ? 'text-zinc-600' : 'text-zinc-400'
             }`}>
-              <div>© 2026 ContextFlow. All rights reserved.</div>
+              <div>© 2026 Afro Lab. All rights reserved.</div>
               <div className="flex items-center gap-2 text-emerald-400">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
                 <span className="font-semibold">Operational</span>
